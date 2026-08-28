@@ -1,0 +1,175 @@
+/* product-list — light listing rows. Values lifted from the gated prototype. */
+.product-list .prod-row {
+  display: grid;
+  grid-template-columns: 88px 384px 1fr;
+  gap: 16px;
+  padding: 56px 0;
+  border-bottom: 1px solid var(--divider-row);
+}
+
+.product-list .prod-row:last-child {
+  border-bottom: 0;
+}
+
+main .product-list-wrapper:first-child .prod-row:first-child,
+.product-list .prod-rows > .prod-row:first-child {
+  padding-top: 0;
+}
+
+.product-list .prod-icon-col img {
+  width: 88px;
+  height: 88px;
+}
+
+.product-list .prod-left h3 {
+  color: #111;
+}
+
+.product-list .prod-left h3 a {
+  color: inherit;
+}
+
+.product-list .price {
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--color-body);
+  margin-top: 16px;
+  line-height: 26px;
+}
+
+.product-list .price-tall {
+  line-height: 32px;
+}
+
+.product-list .price-sub {
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 700;
+  color: var(--color-muted);
+  margin-top: 8px;
+}
+
+.product-list .quote-link {
+  margin-top: 16px;
+}
+
+.product-list .quote-link a {
+  font-size: 18px;
+  line-height: 24px;
+  font-weight: 700;
+  color: var(--color-link);
+  display: inline-flex;
+  align-items: center;
+}
+
+.product-list .quote-link a:hover {
+  text-decoration: underline;
+}
+
+.product-list .quote-link svg {
+  width: 21px;
+  height: 24px;
+}
+
+.product-list .cta-group {
+  display: flex;
+  gap: 16px;
+  margin-top: 24px;
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+
+.product-list .cta-col {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+
+.product-list .trial-note {
+  font-size: 14px;
+  line-height: 16px;
+  color: var(--color-muted);
+  text-align: center;
+}
+
+.product-list .lede-bold {
+  font-size: 18px;
+  line-height: 32px;
+  font-weight: 700;
+  color: var(--color-body);
+}
+
+.product-list .lede-bold strong {
+  font-weight: 700;
+}
+
+.product-list .prod-right ul {
+  margin-top: 16px;
+  padding-left: 34px;
+  list-style: none;
+}
+
+.product-list .prod-right li {
+  font-size: 18px;
+  line-height: 32px;
+  color: var(--color-muted);
+  margin-bottom: 8px;
+  padding-bottom: 4px;
+  position: relative;
+}
+
+.product-list .prod-right li:last-child {
+  margin-bottom: 0;
+}
+
+.product-list .prod-right li::before {
+  content: '';
+  position: absolute;
+  left: -18px;
+  top: 12px;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--color-primary);
+}
+
+@media (width <= 639px) {
+  .product-list .prod-row {
+    grid-template-columns: 1fr;
+    gap: 0;
+    padding: 56px 0 40px;
+    border-bottom: 2px solid var(--divider-card);
+  }
+
+  .product-list .prod-left h3 {
+    font-size: 20px;
+    line-height: 28px;
+  }
+
+  .product-list .price-sub,
+  .product-list .quote-link a {
+    font-size: 16px;
+    line-height: 24px;
+  }
+
+  .product-list .lede-bold {
+    font-size: 16px;
+    line-height: 24px;
+    margin-top: 32px;
+  }
+
+  .product-list .prod-right ul {
+    padding-left: 16px;
+  }
+
+  .product-list .prod-right li {
+    font-size: 16px;
+    line-height: 24px;
+    padding-bottom: 5px;
+  }
+
+  .product-list .prod-right li::before {
+    top: 8px;
+  }
+}

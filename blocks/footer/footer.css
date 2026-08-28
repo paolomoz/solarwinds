@@ -1,0 +1,214 @@
+/* SolarWinds footer — brand blurb + link columns (stock columns block inside
+   the fragment), legal bar, copyright strip. Values from the gated prototype. */
+footer {
+  font-size: 16px;
+  background-color: #fff;
+}
+
+footer .footer {
+  margin: auto;
+}
+
+footer .footer > div > .section {
+  max-width: none;
+  padding: 0;
+}
+
+footer .footer .section > div {
+  max-width: var(--container-max);
+  margin: auto;
+  padding: 0 var(--container-pad);
+}
+
+/* main columns area */
+footer .footer .columns-wrapper {
+  padding-top: 56px;
+  padding-bottom: 59px;
+}
+
+footer .footer .columns > div {
+  display: grid;
+  grid-template-columns: 624px 208px 208px 1fr;
+  gap: 0;
+  align-items: start;
+}
+
+/* brand logo — fixed asset from the code origin (#67), text kept for a11y */
+footer .footer .columns > div > div:first-child p:first-child {
+  width: 147px;
+  height: 26px;
+  background: url('/icons/solarwinds-logo.png') no-repeat center / contain;
+  font-size: 0;
+}
+
+footer .footer .columns > div > div:first-child p:not(:first-child) {
+  margin-top: 40px;
+  font-size: 16px;
+  line-height: 24px;
+  color: var(--color-body);
+  max-width: 504px;
+}
+
+footer .footer .columns h3 {
+  font-size: 16px;
+  line-height: 20px;
+  font-weight: 700;
+  color: #111;
+  margin: 0 0 17px;
+}
+
+footer .footer .columns h3:not(:first-child) {
+  margin-top: 59px;
+}
+
+footer .footer .columns ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+footer .footer .columns li {
+  margin-bottom: 8px;
+  line-height: 20px;
+}
+
+footer .footer .columns li:last-child {
+  margin-bottom: 0;
+}
+
+footer .footer .columns a:any-link:not(.button) {
+  color: #111;
+  font-size: 16px;
+  line-height: 20px;
+}
+
+footer .footer .columns a:any-link:not(.button):hover {
+  color: var(--color-primary);
+}
+
+/* social icon row (a ul whose links hold icon spans) */
+footer .footer .columns ul.social {
+  display: flex;
+  gap: 8px;
+  margin: 19px 0 0;
+}
+
+footer .footer .columns ul:has(.icon) {
+  display: flex;
+  gap: 8px;
+  margin: 19px 0 0;
+}
+
+footer .footer .columns ul:has(.icon) li {
+  margin: 0;
+}
+
+footer .footer .columns ul:has(.icon) a {
+  width: 32px;
+  height: 32px;
+  border: 2px solid #111;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: #111;
+}
+
+footer .footer .columns ul:has(.icon) a:hover {
+  border-color: var(--color-primary);
+  color: var(--color-primary);
+}
+
+footer .footer .columns .icon {
+  width: 16px;
+  height: 16px;
+}
+
+/* the outline "Try SolarWinds" pill (authored <em><a> → a.button.secondary) */
+footer .footer .columns a.button.secondary {
+  margin-top: 48px;
+  height: 56px;
+  padding: 16px 24px;
+  font-size: 18px;
+  line-height: 24px;
+}
+
+footer .footer .columns a.button.secondary:hover {
+  outline-color: var(--color-primary);
+}
+
+/* legal bar */
+footer .footer .section.legal {
+  background: var(--color-inverse-muted);
+}
+
+footer .footer .section.legal > div {
+  min-height: 70px;
+  display: flex;
+  align-items: center;
+}
+
+footer .footer .section.legal ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+footer .footer .section.legal a:any-link {
+  font-size: 14px;
+  color: var(--color-body);
+  padding: 0 12px;
+  border-right: 1px solid #999;
+}
+
+footer .footer .section.legal li:first-child a {
+  padding-left: 0;
+}
+
+footer .footer .section.legal li:last-child a {
+  border-right: 0;
+}
+
+/* copyright strip */
+footer .footer .section.copyright {
+  background: var(--color-dark);
+}
+
+footer .footer .section.copyright > div {
+  min-height: 56px;
+  display: flex;
+  align-items: center;
+}
+
+footer .footer .section.copyright p {
+  font-size: 14px;
+  color: #eee;
+  margin: 0;
+}
+
+@media (width <= 1023px) {
+  footer .footer .columns > div {
+    grid-template-columns: 1fr 1fr;
+    gap: 32px 24px;
+  }
+
+  footer .footer .columns > div > div:first-child {
+    grid-column: 1 / -1;
+  }
+}
+
+@media (width <= 639px) {
+  footer .footer .section.legal ul {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px 24px;
+    padding: 16px 0;
+  }
+
+  footer .footer .section.legal a:any-link {
+    border-right: 0;
+    padding: 0;
+  }
+}

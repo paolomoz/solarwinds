@@ -1,0 +1,198 @@
+/* trial-cards — 3-up card grid (394/378/394 + 33px gutters), pinned CTAs,
+   column + row dividers; `dark` variant inverts for #222 zones. */
+.trial-cards .card-grid {
+  display: grid;
+  grid-template-columns: 394px 378px 394px;
+  column-gap: 33px;
+  row-gap: 32px;
+  justify-content: start;
+}
+
+.trial-cards .trial-card {
+  padding: 16px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+.trial-cards .trial-card:not(:nth-child(3n+1))::before {
+  content: '';
+  position: absolute;
+  left: -17px;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: var(--divider-card);
+}
+
+.trial-cards .card-grid .trial-card:nth-child(n+4):not(:nth-child(3n+1))::before {
+  top: -33px;
+}
+
+.trial-cards .card-grid .trial-card:nth-child(n+4)::after {
+  content: '';
+  position: absolute;
+  top: -17px;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: #9a9a9a;
+}
+
+.trial-cards.dark .trial-card:not(:nth-child(3n+1))::before,
+.trial-cards.dark .card-grid .trial-card:nth-child(n+4)::after {
+  background: var(--divider-card-dark);
+}
+
+.trial-cards .card-title {
+  font-size: 30px;
+  line-height: 40px;
+  font-weight: 700;
+  color: #111;
+}
+
+.trial-cards.dark .card-title {
+  color: #fff;
+}
+
+.trial-cards .card-module-note {
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 700;
+  color: var(--color-muted);
+  margin-top: 16px;
+}
+
+.trial-cards.dark .card-module-note {
+  color: #ccc;
+}
+
+.trial-cards .trial-card ul {
+  margin-top: 32px;
+  padding-left: 18px;
+  list-style: none;
+}
+
+.trial-cards .trial-card li {
+  font-size: 18px;
+  line-height: 32px;
+  color: var(--color-muted);
+  margin-bottom: 8px;
+  padding-bottom: 5px;
+  position: relative;
+}
+
+.trial-cards .trial-card li:last-child {
+  margin-bottom: 0;
+}
+
+.trial-cards .trial-card li::before {
+  content: '';
+  position: absolute;
+  left: -18px;
+  top: 12px;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--color-primary);
+}
+
+.trial-cards.dark .trial-card li {
+  color: var(--color-inverse-muted);
+}
+
+.trial-cards .card-ctas {
+  margin-top: auto;
+  padding-top: 32px;
+  display: flex;
+  flex-direction: column;
+}
+
+.trial-cards .card-ctas .button-wrapper,
+.trial-cards .card-ctas a.button {
+  width: 100%;
+}
+
+.trial-cards .card-ctas .button-wrapper a.button {
+  width: 100%;
+}
+
+.trial-cards .card-ctas .button-wrapper:has(a.secondary) {
+  margin-bottom: 16px;
+}
+
+.trial-cards.dark .card-ctas .button-wrapper:has(a.secondary) {
+  margin-bottom: 12px;
+}
+
+.trial-cards .card-ctas .button-wrapper:has(a.primary) {
+  margin-bottom: 12px;
+}
+
+.trial-cards .card-ctas .trial-note {
+  font-size: 14px;
+  line-height: 16px;
+  color: var(--color-muted);
+  text-align: center;
+}
+
+.trial-cards.dark .card-ctas .trial-note {
+  color: #ccc;
+}
+
+@media (width <= 1023px) {
+  .trial-cards .card-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .trial-cards .trial-card:not(:nth-child(3n+1))::before,
+  .trial-cards .card-grid .trial-card:nth-child(n+4)::after {
+    display: none;
+  }
+}
+
+@media (width <= 639px) {
+  .trial-cards .card-grid {
+    grid-template-columns: 1fr;
+    row-gap: 0;
+  }
+
+  .trial-cards .card-grid .trial-card:nth-child(n+2)::after {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: #9a9a9a;
+  }
+
+  .trial-cards.dark .card-grid .trial-card:nth-child(n+2)::after {
+    background: var(--divider-card-dark);
+  }
+
+  .trial-cards .card-title {
+    font-size: 20px;
+    line-height: 28px;
+  }
+
+  .trial-cards .trial-card ul {
+    margin-top: 32px;
+    padding-left: 16px;
+  }
+
+  .trial-cards .trial-card li {
+    font-size: 16px;
+    line-height: 24px;
+    padding-bottom: 5px;
+  }
+
+  .trial-cards .trial-card li::before {
+    top: 8px;
+  }
+
+  .trial-cards.dark .card-ctas .trial-note {
+    display: none;
+  }
+}

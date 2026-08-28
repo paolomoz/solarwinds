@@ -1,0 +1,423 @@
+/*
+ * SolarWinds /products — EDS foundation.
+ * Rebranded from adobe/aem-boilerplate: the STRUCTURAL layer (body display
+ * gate, header height reservation, section scaffold) is preserved verbatim;
+ * tokens and paint are lifted from the replica prototype
+ * (stardust/prototypes/products-proposed.html), which was pixel-gated against
+ * https://www.solarwinds.com/products (1440: 4.02% / Δ0).
+ */
+
+:root {
+  /* brand colors (lifted from live computed styles) */
+  --background-color: #fff;
+  --color-primary: #ff6200;
+  --color-ink: #111;
+  --color-body: #444;
+  --color-muted: #666;
+  --color-dark: #222;
+  --color-link: #006482;
+  --color-tabbar: #ebefef;
+  --color-inverse-muted: #eee;
+  --divider-row: #a0b9b9;
+  --divider-card: #cfdcdc;
+  --divider-card-dark: #616d6d;
+  --text-color: #000;
+  --link-color: var(--color-link);
+  --link-hover-color: var(--color-primary);
+  --light-color: #f8f8f8;
+  --dark-color: #505050;
+
+  /* fonts */
+  --body-font-family: roboto, roboto-fallback, sans-serif;
+  --heading-font-family: roboto, roboto-fallback, sans-serif;
+  --lede-font-family: roboto-slab, roboto-slab-fallback, serif;
+
+  /* layout */
+  --container-max: 1280px;
+  --container-pad: 24px;
+  --radius-pill: 40px;
+
+  /* nav height: 80px global header (measured live) */
+  --nav-height: 80px;
+}
+
+/* fallback fonts — boilerplate's own Roboto/Arial calibration (the brand font IS Roboto) */
+@font-face {
+  font-family: roboto-fallback;
+  size-adjust: 99.529%;
+  src: local('Arial');
+}
+
+@font-face {
+  font-family: roboto-slab-fallback;
+  size-adjust: 103%;
+  src: local('Times New Roman');
+}
+
+body {
+  display: none;
+  margin: 0;
+  background-color: var(--background-color);
+  color: var(--text-color);
+  font-family: var(--body-font-family);
+  font-size: 16px;
+  line-height: 24px;
+}
+
+body.appear {
+  display: block;
+}
+
+header {
+  height: var(--nav-height);
+  background: #fff;
+}
+
+header .header,
+footer .footer {
+  visibility: hidden;
+}
+
+header .header[data-block-status="loaded"],
+footer .footer[data-block-status="loaded"] {
+  visibility: visible;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin-top: 0;
+  margin-bottom: 0;
+  font-family: var(--heading-font-family);
+  line-height: 1.25;
+  scroll-margin: 70px;
+}
+
+h1 {
+  font-size: 70px;
+  line-height: 80px;
+  font-weight: 700;
+}
+
+h2 {
+  font-size: 48px;
+  line-height: 60px;
+  font-weight: 400;
+}
+
+h3 {
+  font-size: 30px;
+  line-height: 40px;
+  font-weight: 900;
+}
+
+p,
+dl,
+ol,
+ul,
+pre,
+blockquote {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+sup {
+  font-size: 0.6em;
+  line-height: 0;
+}
+
+input,
+textarea,
+select,
+button {
+  font: inherit;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+a:any-link {
+  color: inherit;
+  text-decoration: none;
+}
+
+.icon {
+  display: inline-block;
+  height: 24px;
+  width: 24px;
+}
+
+.icon img {
+  height: 100%;
+  width: 100%;
+}
+
+/* sections */
+main > .section {
+  margin: 0;
+}
+
+main > .section > div {
+  max-width: var(--container-max);
+  margin: auto;
+  padding: 0 var(--container-pad);
+}
+
+main > .section:first-of-type {
+  margin-top: 0;
+}
+
+main .section:empty {
+  display: none;
+}
+
+/* ---------- buttons (decorateButtons convention) ---------- */
+a.button:any-link,
+button.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  text-decoration: none;
+  border: 0;
+  padding: 12px 24px;
+  height: 44px;
+  font-family: var(--body-font-family);
+  font-size: 16px;
+  line-height: 20px;
+  font-weight: 700;
+  cursor: pointer;
+  border-radius: var(--radius-pill);
+  white-space: nowrap;
+  transition: background 0.15s ease, color 0.15s ease, outline-color 0.15s ease;
+}
+
+a.button.primary,
+button.button.primary {
+  background: var(--color-ink);
+  color: #fff;
+}
+
+a.button.primary:hover,
+button.button.primary:hover {
+  background: var(--color-primary);
+  color: var(--color-ink);
+}
+
+a.button.secondary,
+button.button.secondary {
+  background: transparent;
+  color: var(--color-ink);
+  outline: 3px solid var(--color-ink);
+  outline-offset: -3px;
+}
+
+a.button.secondary:hover,
+button.button.secondary:hover {
+  outline-color: var(--color-primary);
+}
+
+p.button-wrapper {
+  display: inline-flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  align-items: center;
+  margin: 0;
+}
+
+/* dark surfaces invert the button system (scoped to section AND block class, #41) */
+main .section.dark a.button.primary,
+main .trial-cards.dark a.button.primary {
+  background: #fff;
+  color: var(--color-ink);
+}
+
+main .section.dark a.button.secondary,
+main .trial-cards.dark a.button.secondary {
+  color: #fff;
+  outline-color: var(--color-primary);
+}
+
+/* ---------- default-content section styles (D1 closed set) ---------- */
+
+/* hero: light page hero — orange centered h1 + Roboto Slab lede */
+main .section.hero {
+  padding: 64px 0;
+}
+
+main .section.hero h1 {
+  color: var(--color-primary);
+  text-align: center;
+}
+
+main .section.hero p {
+  font-family: var(--lede-font-family);
+  font-size: 24px;
+  line-height: 36px;
+  color: var(--color-body);
+  text-align: center;
+  margin-top: 32px;
+}
+
+/* hero-dark: the second listing's hero — white on #222; its h2 is styled as the h1 */
+main .section.hero-dark {
+  background: var(--color-dark);
+  padding: 64px 0;
+}
+
+main .section.hero-dark h2 {
+  font-size: 70px;
+  line-height: 80px;
+  font-weight: 700;
+  color: #fff;
+  text-align: center;
+}
+
+main .section.hero-dark p {
+  font-family: var(--lede-font-family);
+  font-size: 24px;
+  line-height: 36px;
+  color: #ccc;
+  text-align: center;
+  margin-top: 32px;
+}
+
+/* cta-band: full-bleed orange band with a white pill CTA */
+main .section.cta-band {
+  background: var(--color-primary);
+  padding: 56px 0;
+}
+
+main .section.cta-band > div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+}
+
+main .section.cta-band h2 {
+  font-weight: 300;
+  color: #fff;
+  text-align: center;
+}
+
+main .section.cta-band h2 strong {
+  font-weight: 700;
+}
+
+main .section.cta-band a.button.primary {
+  background: #fff;
+  color: var(--color-ink);
+  font-size: 18px;
+  line-height: 24px;
+  padding: 16px 24px;
+  height: 56px;
+}
+
+main .section.cta-band a.button.primary:hover {
+  background: var(--color-ink);
+  color: #fff;
+}
+
+/* category section heads (default content before product-list / trial-cards blocks) */
+main .product-list-container > .default-content-wrapper h2 {
+  padding-top: 64px;
+  margin-bottom: 40px;
+}
+
+main .trial-cards-container > .default-content-wrapper h2 {
+  padding-top: 64px;
+  margin-bottom: 24px;
+  text-align: center;
+}
+
+main .trial-cards-container.trials-monitoring > .default-content-wrapper h2 {
+  margin-bottom: 40px;
+}
+
+/* dark trial zones */
+main .section.dark {
+  background: var(--color-dark);
+}
+
+main .section.dark > .default-content-wrapper h2 {
+  color: #fff;
+}
+
+main .trial-cards-container {
+  padding-bottom: 93px;
+}
+
+main .trial-cards-container.trials-tools {
+  padding-bottom: 77px;
+}
+
+@media (width <= 1023px) {
+  :root {
+    --nav-height: 80px;
+  }
+}
+
+@media (width <= 639px) {
+  main .section.hero {
+    padding: 44px 0 34px;
+  }
+
+  main .section.hero h1 {
+    font-size: 48px;
+    line-height: 60px;
+    text-align: left;
+  }
+
+  main .section.hero p {
+    font-size: 20px;
+    line-height: 28px;
+    text-align: left;
+    margin-top: 32px;
+  }
+
+  main .section.hero-dark h2 {
+    font-size: 48px;
+    line-height: 60px;
+    text-align: left;
+  }
+
+  main .section.hero-dark p {
+    font-size: 20px;
+    line-height: 28px;
+    text-align: left;
+  }
+
+  main .section.cta-band {
+    padding: 48px 0;
+  }
+
+  main .section.cta-band h2 {
+    font-size: 34px;
+    line-height: 44px;
+  }
+
+  main .section.cta-band a.button.primary {
+    width: 100%;
+  }
+
+  main .product-list-container > .default-content-wrapper h2 {
+    font-size: 34px;
+    line-height: 44px;
+    padding-top: 62px;
+    margin-bottom: 56px;
+  }
+
+  main .trial-cards-container > .default-content-wrapper h2 {
+    font-size: 34px;
+    line-height: 44px;
+    text-align: left;
+    padding-top: 48px;
+  }
+}

@@ -1,0 +1,51 @@
+/* SolarWinds brand faces — the live site's own woff2 files
+   (solarwinds.com/_platform/fonts, roboto-v30 / roboto-slab-v24).
+   Loaded by loadFonts() after first paint; roboto-fallback (styles.css)
+   carries first paint with matched metrics. */
+@font-face {
+  font-family: roboto;
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+  src: url('../fonts/roboto-v30-latin-300.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: roboto;
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('../fonts/roboto-v30-latin-regular.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: roboto;
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url('../fonts/roboto-v30-latin-500.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: roboto;
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url('../fonts/roboto-v30-latin-700.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: roboto;
+  font-style: normal;
+  font-weight: 900;
+  font-display: swap;
+  src: url('../fonts/roboto-v30-latin-900.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: roboto-slab;
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('../fonts/roboto-slab-v24-latin-regular.woff2') format('woff2');
+}
