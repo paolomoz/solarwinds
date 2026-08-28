@@ -11,9 +11,23 @@
   border-bottom: 0;
 }
 
-main .product-list-wrapper:first-child .prod-row:first-child,
-.product-list .prod-rows > .prod-row:first-child {
+.product-list .product-rows > .prod-row:first-child {
   padding-top: 0;
+}
+
+/* Database section (live quirk): no separators, single 56px gap */
+main .section.db-list .prod-row {
+  border-bottom: 0;
+  padding: 0 0 56px;
+}
+
+main .section.db-list .prod-row:last-child {
+  padding-bottom: 64px;
+}
+
+/* Tools section: larger last-row tail (live) */
+main .section.tools-list .prod-row:last-child {
+  padding-bottom: 82px;
 }
 
 .product-list .prod-icon-col img {
