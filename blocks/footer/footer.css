@@ -20,10 +20,10 @@ footer .footer .section > div {
   padding: 0 var(--container-pad);
 }
 
-/* main columns area */
+/* main columns area — beat the generic .section > div padding shorthand */
+footer .footer .section > div.columns-wrapper,
 footer .footer .columns-wrapper {
-  padding-top: 56px;
-  padding-bottom: 59px;
+  padding: 56px var(--container-pad) 59px;
 }
 
 footer .footer .columns > div {
