@@ -184,10 +184,12 @@ header nav .nav-sections ul > li > ul {
 
 @media (width >= 1024px) {
   header nav .nav-sections {
-    display: block;
+    display: flex;
+    align-items: center;
     visibility: visible;
     white-space: nowrap;
     margin-left: 32px;
+    height: var(--nav-height);
   }
 
   header nav .nav-sections .default-content-wrapper > ul {
@@ -213,6 +215,17 @@ header nav .nav-tools {
   display: flex;
   align-items: center;
   gap: 12px;
+}
+
+@media (width >= 1024px) {
+  header nav .nav-tools {
+    margin-left: auto;
+  }
+
+  header nav .nav-tools .default-content-wrapper {
+    display: flex;
+    align-items: center;
+  }
 }
 
 header nav .nav-tools p {
