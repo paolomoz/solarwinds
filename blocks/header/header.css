@@ -192,9 +192,11 @@ header nav .nav-sections ul > li > ul {
     height: var(--nav-height);
   }
 
-  /* the runtime sets aria-expanded=true on desktop; cancel the mobile-menu
-     align-self so links center vertically like live (measured y33 @80px bar) */
+  /* the runtime sets aria-expanded=true on desktop; the mobile-menu rule wins
+     on specificity (attr selector), so re-assert flex + centering at the same
+     specificity — links center vertically like live (measured y33 @80px bar) */
   header nav[aria-expanded='true'] .nav-sections {
+    display: flex;
     align-self: center;
   }
 

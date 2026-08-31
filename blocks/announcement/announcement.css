@@ -49,7 +49,6 @@ main .announcement-container > div {
   border: 0;
   cursor: pointer;
   padding: 0;
-  margin-left: 24px;
 }
 
 @media (width <= 639px) {
