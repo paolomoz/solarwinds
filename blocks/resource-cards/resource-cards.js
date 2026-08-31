@@ -27,7 +27,11 @@ export default async function decorate(block) {
     const eyebrow = texts.find((p) => p.textContent.trim().length < 20);
     const title = texts.find((p) => p !== eyebrow);
     if (eyebrow) { const e = document.createElement('p'); e.className = 'res-eyebrow'; e.textContent = eyebrow.textContent.trim(); card.append(e); }
-    if (title) { const t = document.createElement('p'); t.className = 'res-title'; t.textContent = title.textContent.trim().replace(/\s*Read more.*$/i, ''); card.append(t); }
+    // a media card with no eyebrow is a poster card (title baked into the
+    // artwork); its authored link text serves the href/aria only
+    const poster = media && !eyebrow;
+    if (poster) card.setAttribute('aria-label', title ? title.textContent.trim() : card.href);
+    if (title && !poster) { const t = document.createElement('p'); t.className = 'res-title'; t.textContent = title.textContent.trim().replace(/\s*Read more.*$/i, ''); card.append(t); }
     grid.append(card);
   });
   block.replaceChildren(grid);
