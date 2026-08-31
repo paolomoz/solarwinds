@@ -7,7 +7,11 @@
 export default async function decorate(block) {
   const grid = document.createElement('div');
   grid.className = 'logo-grid';
-  block.querySelectorAll('picture, img').forEach((m) => {
+  // pipeline wraps images as <p><picture><img>; collect pictures when present
+  // (never picture AND its inner img — that duplicates grid items)
+  let media = [...block.querySelectorAll('picture')];
+  if (!media.length) media = [...block.querySelectorAll('img')];
+  media.forEach((m) => {
     const img = m.tagName === 'IMG' ? m : m.querySelector('img');
     if (img) img.loading = 'lazy';
     grid.append(m);
