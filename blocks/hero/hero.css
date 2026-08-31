@@ -12,12 +12,15 @@ main .hero-container > div {
   padding: 0;
 }
 
+/* live anchors the composite at a fixed 712px from the viewport's left edge
+   (measured 713 @1440, 711 @1512) with its top 48px hidden under the
+   announcement bar — not container-bound, so it must not drift on wide screens */
 .hero .hh-media {
   position: absolute;
   top: 0;
-  right: 0;
-  width: 763px;
-  height: 712px;
+  left: 712px;
+  width: calc(100% - 712px);
+  height: 664px;
   overflow: hidden;
 }
 
@@ -26,6 +29,7 @@ main .hero-container > div {
   width: auto;
   max-width: none;
   display: block;
+  margin-top: -48px;
 }
 
 .hero .hh-deco {
@@ -93,6 +97,7 @@ main .hero-container > div {
   .hero .hh-media {
     position: relative;
     top: 0;
+    left: 0;
     width: 100%;
     height: auto;
     order: 2;
@@ -102,6 +107,7 @@ main .hero-container > div {
   .hero .hh-media img {
     width: 100%;
     height: auto;
+    margin-top: 0;
   }
 
   .hero .hh-deco {

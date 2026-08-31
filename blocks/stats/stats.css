@@ -1,6 +1,7 @@
 /* stats — 84% / 20 / 300K+ band */
 main .stats-container {
   background: #fff;
+  border-bottom: 1px solid #a1a1a1; /* live: full-bleed hairline below the band */
 }
 
 main .stats-container > div {

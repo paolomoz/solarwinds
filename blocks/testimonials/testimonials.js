@@ -10,9 +10,15 @@ export default async function decorate(block) {
   const rows = [...block.children];
   const slides = document.createElement('div');
   slides.className = 't-slides';
+  // decorative connector line + travelling dot (geometry lifted verbatim from
+  // the live page's inline SVG; the dot animates along the reversed path)
   const line = document.createElement('div');
   line.className = 't-line';
   line.setAttribute('aria-hidden', 'true');
+  line.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 624 307" shape-rendering="geometricPrecision">'
+    + '<path d="M-63.629297 296.548189h615.733522c33.441616 0 60.536649-23.57379 60.536649-61.155567V-32.29177" fill="none" stroke="#d8e3e3" stroke-width="8"/>'
+    + '<circle class="t-line-dot" transform="scale(1.25)" fill="#444" stroke="#fff" stroke-width="4" stroke-miterlimit="3" r="6.08944"/>'
+    + '</svg>';
   slides.append(line);
 
   const arrow = (dir) => `<button class="t-arrow t-${dir}" aria-label="${dir === 'prev' ? 'Previous' : 'Next'}"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="${dir === 'prev' ? 'M15 5l-7 7 7 7' : 'M9 5l7 7-7 7'}" stroke="currentColor" stroke-width="2.5" fill="none"/></svg></button>`;

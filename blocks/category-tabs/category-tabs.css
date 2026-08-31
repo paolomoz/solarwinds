@@ -89,11 +89,20 @@ main .category-tabs-container > .category-tabs-wrapper {
   width: auto;
   height: auto;
   max-width: none;
+  transition: opacity 0.5s cubic-bezier(0.4, 0, 0.2, 1); /* live piece swap */
 }
 
-.category-tabs .donut-piece .d-on { display: none; }
-.category-tabs .donut-piece.on .d-off { display: none; }
-.category-tabs .donut-piece.on .d-on { display: block; }
+/* raised (on) artwork stacked over the flat (off) artwork; tab switches
+   crossfade the pair — same 0.5s ease as live, not an instant display flip */
+.category-tabs .donut-piece .d-on {
+  position: absolute;
+  left: 0;
+  top: 0;
+  opacity: 0;
+}
+
+.category-tabs .donut-piece.on .d-off { opacity: 0; }
+.category-tabs .donut-piece.on .d-on { opacity: 1; }
 
 .category-tabs .tab-panels {
   position: absolute;

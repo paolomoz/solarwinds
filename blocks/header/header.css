@@ -192,10 +192,21 @@ header nav .nav-sections ul > li > ul {
     height: var(--nav-height);
   }
 
+  /* the runtime sets aria-expanded=true on desktop; cancel the mobile-menu
+     align-self so links center vertically like live (measured y33 @80px bar) */
+  header nav[aria-expanded='true'] .nav-sections {
+    align-self: center;
+  }
+
   header nav .nav-sections .default-content-wrapper > ul {
     display: flex;
-    gap: 32px;
+    gap: 44px;
     margin: 0;
+  }
+
+  /* live item starts: 283 / 390 / 498 / 610 / 692 — last gap is tighter */
+  header nav .nav-sections .default-content-wrapper > ul > li:last-child {
+    margin-left: -12px;
   }
 
   header nav .nav-sections .default-content-wrapper > ul > li {
@@ -235,7 +246,7 @@ header nav .nav-tools p {
 
 header nav .nav-tools a:any-link:not(.button) {
   font-weight: 700;
-  margin: 0 12px;
+  margin: 0 24px 0 12px; /* live: 24px between Contact Us and the pill */
 }
 
 header nav .nav-tools a:any-link:not(.button):hover {

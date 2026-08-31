@@ -116,13 +116,29 @@ main .section.trust > .testimonials-wrapper {
 
 .testimonials .t-line {
   position: absolute;
-  top: -60px;
-  left: 956px;
-  right: -104px;
-  height: 120px;
-  border-top: 4px solid #fff;
-  border-left: 4px solid #fff;
-  border-top-left-radius: 48px;
+  top: -266px;
+  left: 573px;
+  width: 656px;
+  height: 323px;
+}
+
+.testimonials .t-line svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.testimonials .t-line-dot {
+  offset-path: path('M612.640874,-32.29177Q612.640874,197.810845,612.640874,235.392622C612.640874,272.974399,585.545841,296.548189,552.104225,296.548189Q518.662609,296.548189,-63.629297,296.548189');
+  offset-rotate: 0deg;
+  animation: t-dot-travel 24s linear infinite;
+}
+
+@keyframes t-dot-travel {
+  0% { offset-distance: 0%; }
+  50% { offset-distance: 100%; }
+  50.01% { offset-distance: 0%; }
+  100% { offset-distance: 100%; }
 }
 
 .testimonials .t-nav {
