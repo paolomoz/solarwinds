@@ -159,6 +159,16 @@ a:any-link {
 }
 
 /* sections */
+
+/* the replica prototypes (and the live site) size everything border-box;
+   scoped to main so chrome blocks keep the metrics they were gated with */
+main,
+main *,
+main *::before,
+main *::after {
+  box-sizing: border-box;
+}
+
 main > .section {
   margin: 0;
 }
