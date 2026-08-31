@@ -1,0 +1,99 @@
+/* logos — partner logos row (grayscale). `awards` variant = badge grid. */
+main .logos-container {
+  background: #d8e3e3;
+}
+
+main .logos-container > div {
+  padding-top: 40px;
+  padding-bottom: 40px;
+}
+
+.logos {
+  display: flex;
+  align-items: center;
+  gap: 56px;
+}
+
+.logos .logo-head h2 {
+  font-size: 30px;
+  line-height: 40px;
+  font-weight: 700;
+  color: #111;
+  max-width: 250px;
+  margin: 0;
+}
+
+.logos .logo-grid {
+  display: flex;
+  align-items: center;
+  gap: 56px;
+}
+
+.logos img {
+  width: 121px;
+  height: 55px;
+  object-fit: contain;
+  filter: grayscale(1) opacity(0.55);
+}
+
+/* awards variant: white ground, 2x3 grid of large badges, no filter */
+main .awards-zone {
+  background: #fff;
+}
+
+main .awards-zone .logos-wrapper {
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+.logos.awards .logo-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 175px);
+  gap: 44px 96px;
+}
+
+.logos.awards img {
+  width: 175px;
+  height: 175px;
+  filter: none;
+}
+
+@media (width <= 639px) {
+  .logos {
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+  }
+
+  main .logos-container > div {
+    padding-top: 64px;
+  }
+
+  .logos .logo-head h2 {
+    text-align: center;
+    max-width: none;
+  }
+
+  .logos .logo-grid {
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  .logos img {
+    width: 160px;
+    height: 72px;
+  }
+
+  .logos.awards .logo-grid {
+    display: flex;
+    overflow-x: auto;
+    gap: 24px;
+    margin-top: 50px;
+  }
+
+  .logos.awards img {
+    width: 300px;
+    height: 300px;
+    flex: 0 0 auto;
+  }
+}

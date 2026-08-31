@@ -31,3 +31,121 @@
     order: unset;
   }
 }
+
+/* worldtour variant — orange promo band (SolarWinds home) */
+main .section.worldtour {
+  background: var(--color-primary);
+}
+
+main .section.worldtour > div {
+  padding-top: 56px;
+  padding-bottom: 56px;
+}
+
+.columns.worldtour > div {
+  display: flex;
+  gap: 106px;
+  align-items: flex-start;
+}
+
+.columns.worldtour > div > div:first-child {
+  position: relative;
+  flex: 0 0 558px;
+}
+
+.columns.worldtour > div > div:first-child::before {
+  content: '';
+  position: absolute;
+  left: 30px;
+  top: 30px;
+  width: 558px;
+  height: 331px;
+  background: url('https://p1.aprimocdn.net/solarwinds/2ed50367-189c-445c-bcd3-b35401498ccc/Card_Shadow_Dot_Pattern_%28L%29_Original%20file.png?auto=webp&format=webply&quality=50') no-repeat;
+  background-size: cover;
+}
+
+.columns.worldtour img {
+  position: relative;
+  width: 558px;
+  height: 331px;
+  display: block;
+}
+
+.columns.worldtour > div > div:last-child {
+  padding-top: 28px;
+  max-width: 520px;
+}
+
+.columns.worldtour h2 {
+  font-size: 48px;
+  line-height: 60px;
+  font-weight: 900;
+  color: #fff;
+  margin: 0;
+}
+
+.columns.worldtour p {
+  font-size: 20px;
+  line-height: 32px;
+  color: #111;
+  margin: 16px 0 0;
+}
+
+.columns.worldtour p.button-wrapper {
+  margin-top: 40px;
+}
+
+.columns.worldtour a.button.secondary {
+  font-size: 18px;
+  line-height: 24px;
+  padding: 16px 24px;
+  height: 56px;
+}
+
+.columns.worldtour a.button.secondary:hover {
+  background: #111;
+  color: #fff;
+  outline-color: #111;
+}
+
+@media (width <= 1023px) {
+  .columns.worldtour > div {
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  .columns.worldtour > div > div:first-child {
+    flex: none;
+    max-width: 100%;
+  }
+
+  .columns.worldtour > div > div:first-child::before {
+    display: none;
+  }
+
+  .columns.worldtour img {
+    width: 100%;
+    height: auto;
+  }
+
+  .columns.worldtour > div > div:last-child {
+    padding-top: 0;
+    max-width: none;
+  }
+}
+
+@media (width <= 639px) {
+  main .section.worldtour > div {
+    padding-top: 16px;
+    padding-bottom: 16px;
+  }
+
+  .columns.worldtour h2 {
+    font-size: 34px;
+    line-height: 44px;
+  }
+
+  .columns.worldtour p.button-wrapper {
+    margin-top: 24px;
+  }
+}

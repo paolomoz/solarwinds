@@ -1,0 +1,86 @@
+/* ai-cards — dark #222 trio with white outline CTAs */
+main .section.ai {
+  background: var(--color-dark);
+}
+
+main .section.ai > .default-content-wrapper {
+  padding-top: 64px;
+}
+
+main .section.ai > .default-content-wrapper h2 {
+  font-size: 48px;
+  line-height: 60px;
+  font-weight: 700;
+  color: #fff;
+}
+
+main .section.ai > .ai-cards-wrapper {
+  padding-bottom: 64px;
+}
+
+.ai-cards .ai-cols {
+  display: grid;
+  grid-template-columns: 373px 373px 373px;
+  gap: 0 40px;
+  margin-top: 40px;
+}
+
+.ai-cards h3 {
+  font-size: 24px;
+  line-height: 36px;
+  font-weight: 700;
+  color: #fff;
+  margin: 0;
+}
+
+.ai-cards p {
+  font-size: 18px;
+  line-height: 28px;
+  color: #eee;
+  margin: 12px 0 0;
+}
+
+.ai-cards .ai-cta {
+  margin-top: 36px;
+}
+
+.ai-cards .ai-cta a.button.secondary {
+  color: #fff;
+  outline-color: #fff;
+  font-size: 18px;
+  line-height: 24px;
+  padding: 16px 24px;
+  height: 56px;
+}
+
+.ai-cards .ai-cta a.button.secondary:hover {
+  outline-color: var(--color-primary);
+}
+
+@media (width <= 1023px) {
+  .ai-cards .ai-cols {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+}
+
+@media (width <= 639px) {
+  main .section.ai > .default-content-wrapper { padding-top: 48px; }
+
+  main .section.ai > .default-content-wrapper h2 {
+    font-size: 34px;
+    line-height: 44px;
+  }
+
+  main .section.ai > .ai-cards-wrapper { padding-bottom: 48px; }
+
+  .ai-cards h3 { font-size: 20px; line-height: 30px; }
+  .ai-cards p { font-size: 16px; line-height: 24px; }
+  .ai-cards .ai-cta { margin-top: 20px; }
+
+  .ai-cards .ai-cta a.button.secondary {
+    font-size: 16px;
+    height: 48px;
+    padding: 12px 20px;
+  }
+}

@@ -1,0 +1,56 @@
+/* stats — 84% / 20 / 300K+ band */
+main .stats-container {
+  background: #fff;
+}
+
+main .stats-container > div {
+  padding-top: 73px;
+  padding-bottom: 73px;
+}
+
+.stats .stat-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 24px;
+}
+
+.stats .stat {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+
+.stats .n {
+  font-size: 100px;
+  line-height: 110px;
+  font-weight: 900;
+  color: var(--color-primary);
+}
+
+.stats .l {
+  font-size: 22px;
+  line-height: 32px;
+  color: var(--color-body);
+  max-width: 170px;
+}
+
+@media (width <= 1023px) {
+  .stats .stat-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 6px;
+  }
+}
+
+@media (width <= 639px) {
+  main .stats-container > div {
+    padding-top: 48px;
+    padding-bottom: 48px;
+  }
+
+  .stats .n {
+    font-size: 64px;
+    line-height: 72px;
+  }
+}

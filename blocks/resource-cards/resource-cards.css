@@ -1,0 +1,88 @@
+/* resource-cards — white cards on the #EEE resources zone */
+main .section.resources {
+  background: var(--color-inverse-muted);
+}
+
+main .section.resources > .resource-cards-wrapper:first-child,
+main .section.resources > .resource-cards-wrapper.first {
+  padding-top: 64px;
+}
+
+.resource-cards .res-grid {
+  display: grid;
+  grid-template-columns: 400px 400px 400px;
+  gap: 16px;
+  margin-top: 8px;
+}
+
+.resource-cards.lead .res-grid {
+  grid-template-columns: 510px 1fr 400px;
+  margin-top: 0;
+}
+
+.resource-cards .res-card {
+  display: block;
+  background: #fff;
+}
+
+.resource-cards .res-card img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.resource-cards .res-eyebrow {
+  font-size: 12px;
+  line-height: 18px;
+  font-weight: 700;
+  color: var(--color-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  margin: 20px 24px 0;
+}
+
+.resource-cards .res-title {
+  font-size: 20px;
+  line-height: 28px;
+  font-weight: 700;
+  color: #111;
+  margin: 4px 24px 24px;
+}
+
+.resource-cards .res-card:hover .res-title {
+  color: var(--color-primary);
+}
+
+.resource-cards .res-feature {
+  padding: 80px 24px 0;
+}
+
+.resource-cards .res-feature .res-eyebrow { margin: 0; }
+
+.resource-cards .res-feature .res-title {
+  font-size: 30px;
+  line-height: 40px;
+  font-weight: 900;
+  margin: 8px 0 0;
+}
+
+/* View All CTA (default content after the blocks) */
+main .section.resources > .default-content-wrapper:last-child {
+  text-align: center;
+  padding-top: 28px;
+  padding-bottom: 80px;
+}
+
+main .section.resources a.button.secondary {
+  font-size: 18px;
+  line-height: 24px;
+  padding: 16px 24px;
+  height: 56px;
+}
+
+@media (width <= 1023px) {
+  .resource-cards .res-grid,
+  .resource-cards.lead .res-grid {
+    grid-template-columns: 1fr;
+  }
+}

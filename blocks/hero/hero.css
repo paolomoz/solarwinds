@@ -1,37 +1,139 @@
-.hero-container .hero-wrapper {
-  max-width: unset;
+/* SolarWinds home hero (values from the gated replica prototype) */
+main .hero-container > div {
+  max-width: none;
   padding: 0;
 }
 
 .hero {
   position: relative;
-  padding: 40px 24px;
-  min-height: 300px;
+  background: #fff;
+  overflow: hidden;
+  height: 664px;
+  padding: 0;
+}
+
+.hero .hh-media {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 763px;
+  height: 712px;
+  overflow: hidden;
+}
+
+.hero .hh-media img {
+  height: 712px;
+  width: auto;
+  max-width: none;
+  display: block;
+}
+
+.hero .hh-deco {
+  position: absolute;
+  left: 437px;
+  top: 502px;
+  width: 275px;
+  height: 220px;
+  border: 2px solid #d8e3e3;
+  border-radius: 48px;
+}
+
+.hero .hh-copy {
+  position: relative;
+  max-width: var(--container-max);
+  margin: 0 auto;
+  padding: 140px 24px 0;
 }
 
 .hero h1 {
-  max-width: 1200px;
-  margin-left: auto;
-  margin-right: auto;
-  color: var(--background-color);
+  font-size: 56px;
+  line-height: 66px;
+  font-weight: 300;
+  color: var(--color-primary);
+  max-width: 520px;
+  margin: 0;
 }
 
-.hero picture {
-  position: absolute;
-  z-index: -1;
-  inset: 0;
-  object-fit: cover;
-  box-sizing: border-box;
+.hero h1 strong {
+  font-weight: 900;
 }
 
-.hero img {
-  object-fit: cover;
-  width: 100%;
-  height: 100%;
+.hero .hh-lede {
+  font-size: 22px;
+  line-height: 32px;
+  color: var(--color-body);
+  margin: 24px 0 0;
+  max-width: 505px;
 }
 
-@media (width >= 900px) {
+.hero .hh-cta {
+  margin: 48px 0 0;
+}
+
+.hero .hh-cta a.button.primary {
+  font-size: 22px;
+  line-height: 32px;
+  padding: 16px 40px;
+  height: 64px;
+}
+
+.hero .hh-cta a.button.primary:hover {
+  background: var(--color-primary);
+  color: var(--color-ink);
+}
+
+@media (width <= 1023px) {
   .hero {
-    padding: 40px 32px;
+    height: auto;
+    padding-bottom: 24px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .hero .hh-media {
+    position: relative;
+    top: 0;
+    width: 100%;
+    height: auto;
+    order: 2;
+    padding: 24px 24px 48px;
+  }
+
+  .hero .hh-media img {
+    width: 100%;
+    height: auto;
+  }
+
+  .hero .hh-deco {
+    display: none;
+  }
+
+  .hero .hh-copy {
+    order: 1;
+    padding-top: 32px;
+    width: 100%;
+  }
+}
+
+@media (width <= 639px) {
+  .hero h1 {
+    font-size: 48px;
+    line-height: 56px;
+  }
+
+  .hero .hh-lede {
+    font-size: 20px;
+    line-height: 30px;
+    margin-top: 40px;
+  }
+
+  .hero .hh-cta {
+    margin-top: 40px;
+  }
+
+  .hero .hh-cta a.button.primary {
+    font-size: 18px;
+    height: 56px;
+    padding: 14px 28px;
   }
 }

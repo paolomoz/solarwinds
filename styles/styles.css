@@ -421,3 +421,144 @@ main .trial-cards-container.trials-tools {
     padding-top: 48px;
   }
 }
+
+/* ---------- home page section styles (D1 closed set additions) ---------- */
+
+/* help-band: orange strip with decorative edge photos (CSS, decorative) */
+main .section.help-band {
+  background: var(--color-primary);
+  position: relative;
+  min-height: 212px;
+  overflow: hidden;
+}
+
+main .section.help-band::before,
+main .section.help-band::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  width: 372px;
+  height: 212px;
+  background-size: cover;
+}
+
+main .section.help-band::before {
+  left: 0;
+  background-image: url('https://p1.aprimocdn.net/solarwinds/17108b4f-df7e-4c12-857f-b409008f90e8/left_orange.png_Original%20file.png?auto=webp&format=webply&width=372&height=212');
+}
+
+main .section.help-band::after {
+  right: 0;
+  background-image: url('https://p1.aprimocdn.net/solarwinds/e4bff5f4-142c-445e-a633-b3d100bfb740/right_image_Original%20file.png?auto=webp&format=webply&width=373&height=213');
+}
+
+main .section.help-band > div {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  padding-top: 40px;
+  padding-bottom: 40px;
+}
+
+main .section.help-band h2 {
+  font-size: 48px;
+  line-height: 60px;
+  font-weight: 700;
+  color: #fff;
+}
+
+main .section.help-band p {
+  margin-top: 16px;
+}
+
+main .section.help-band a.button.secondary {
+  font-size: 16px;
+  line-height: 20px;
+  padding: 14px 24px;
+  height: 48px;
+}
+
+/* awards heading (default content before logos (awards)) */
+main .section.awards-zone {
+  background: #fff;
+}
+
+main .section.awards-zone > .default-content-wrapper {
+  padding-top: 64px;
+}
+
+main .section.awards-zone {
+  --awards: 1;
+}
+
+main .section.awards-zone > .default-content-wrapper h2 {
+  font-size: 56px;
+  line-height: 66px;
+  font-weight: 300;
+  color: #111;
+  max-width: 340px;
+}
+
+main .section.awards-zone > .default-content-wrapper h2 strong {
+  font-weight: 900;
+}
+
+/* awards zone: heading and grid side by side */
+main .section.awards-zone {
+  display: flex;
+  gap: 120px;
+  max-width: var(--container-max);
+  margin: 0 auto;
+  padding: 0 24px 84px;
+}
+
+main .section.awards-zone > .default-content-wrapper,
+main .section.awards-zone > .logos-wrapper {
+  max-width: none;
+  margin: 0;
+  padding-left: 0;
+  padding-right: 0;
+}
+
+main .section.awards-zone > .logos-wrapper {
+  padding-top: 64px;
+}
+
+@media (width <= 1023px) {
+  main .section.help-band::before,
+  main .section.help-band::after {
+    display: none;
+  }
+
+  main .section.awards-zone {
+    flex-direction: column;
+    gap: 24px;
+    padding-bottom: 48px;
+  }
+}
+
+@media (width <= 639px) {
+  main .section.help-band > div {
+    padding-top: 52px;
+    padding-bottom: 52px;
+  }
+
+  main .section.help-band h2 {
+    font-size: 34px;
+    line-height: 44px;
+  }
+
+  main .section.awards-zone > .default-content-wrapper {
+    padding-top: 24px;
+  }
+
+  main .section.awards-zone > .default-content-wrapper h2 {
+    font-size: 40px;
+    line-height: 48px;
+    max-width: none;
+  }
+
+  main .section.awards-zone > .logos-wrapper {
+    padding-top: 0;
+  }
+}
